@@ -1,7 +1,27 @@
 import React from "react";
+import { useStateValue } from "../context/StateProvider";
+import * as actionType from "../context/reducer/actionTypes";
 import "./Product.css";
 
-function Product({ title, image, price, rating }) {
+function Product({ id, title, image, price, rating }) {
+  // pull items from the data layer {basket} = state
+  const [{ basket }, dispatch] = useStateValue();
+
+  // to debug
+  console.log("this is the basket --->", basket);
+
+  const addToBasket = () => {
+    //dispatch the item to the data layer
+    dispatch({
+      type: actionType.ADD_TO_BASKET,
+      item: {
+        id: id,
+        title: title,
+        price: price,
+        rating: rating,
+      },
+    });
+  };
   return (
     <div className="product">
       <div className="product__info">
@@ -19,7 +39,7 @@ function Product({ title, image, price, rating }) {
         </div>
       </div>
       <img src={image} alt="product" />
-      <button>Add to Basket</button>
+      <button onClick={addToBasket}>Add to Basket</button>
     </div>
   );
 }
