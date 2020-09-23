@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Header.css";
 
 // Material UI
@@ -8,11 +9,13 @@ import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 function Header() {
   return (
     <div className="header">
-      <img
-        className="header__logo"
-        src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
-        alt="logo"
-      />
+      <Link to="/">
+        <img
+          className="header__logo"
+          src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
+          alt="logo"
+        />
+      </Link>
       <div className="header__search">
         <input className="header__searchInput"></input>
         <SearchIcon className="header__searchIcon" />
@@ -30,10 +33,14 @@ function Header() {
           <span className="header__itemLineOne">Your</span>
           <span className="header__itemLineSecond">Prime</span>
         </div>
-        <div className="header__itemBasket">
-          <ShoppingCartOutlinedIcon />
-          <span className="header__itemLineSecond header__basketCount">0</span>
-        </div>
+        <Link to="/checkout">
+          <div className="header__itemBasket">
+            <ShoppingCartOutlinedIcon />
+            <span className="header__itemLineSecond header__basketCount">
+              0
+            </span>
+          </div>
+        </Link>
       </div>
     </div>
   );
