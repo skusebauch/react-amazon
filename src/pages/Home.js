@@ -13,6 +13,7 @@ function Home() {
         ></img>
         <div className="home__row">
           <Product
+            key={Math.random().toString(36)}
             title={
               "The Lean Startup: How Today's Entrepreneurs Use Continuous Innovation to Create Radically Successful Businesses"
             }
@@ -23,6 +24,7 @@ function Home() {
             rating={5}
           />
           <Product
+            key={Math.random().toString(36)}
             title={"Apple iPhone 11 (128 Gb) - Violette"}
             price={754.3}
             image={
@@ -33,6 +35,7 @@ function Home() {
         </div>
         <div className="home__row">
           <Product
+            key={Math.random().toString(36)}
             title={
               "Elon Musk: Wie Elon Musk die Welt verändert – Die Biografie"
             }
@@ -43,6 +46,7 @@ function Home() {
             rating={5}
           />
           <Product
+            key={Math.random().toString(36)}
             title={
               'neues Apple MacBook Pro (16", 16GB RAM, 512GB Speicherplatz) - Space Grau'
             }
@@ -53,6 +57,7 @@ function Home() {
             rating={5}
           />
           <Product
+            key={Math.random().toString(36)}
             title={"Senor Developer | Entwickler Programmierer Nerd Shirt"}
             price={13.49}
             image={
@@ -63,6 +68,7 @@ function Home() {
         </div>
         <div className="home__row">
           <Product
+            key={Math.random().toString(36)}
             title={"Samsung C49HG90DMU LED Monitor (49 Zoll)"}
             price={739.0}
             image={
