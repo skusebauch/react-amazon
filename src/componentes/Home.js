@@ -13,14 +13,16 @@ function Home() {
         ></img>
         <div className="home__row">
           <Product />
-          {/* ProductCard */}
+          <Product />
         </div>
         <div className="home__row">
-          {/* ProductCard */}
-          {/* ProductCard */}
-          {/* ProductCard */}
+          <Product />
+          <Product />
+          <Product />
         </div>
-        <div className="home__row">{/* ProductCard */}</div>
+        <div className="home__row">
+          <Product />
+        </div>
       </div>
     </div>
   );
