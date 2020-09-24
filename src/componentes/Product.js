@@ -15,6 +15,7 @@ function Product({ id, title, image, price, rating }) {
       type: actionType.ADD_TO_BASKET,
       item: {
         id: id,
+        image: image,
         title: title,
         price: price,
         rating: rating,
