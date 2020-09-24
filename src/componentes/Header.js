@@ -24,10 +24,12 @@ function Header() {
         <SearchIcon className="header__searchIcon" />
       </div>
       <div className="header__nav">
-        <div className="header__item">
-          <span className="header__itemLineOne">Hello Guest</span>
-          <span className="header__itemLineSecond">Sign In</span>
-        </div>
+        <Link to="/login">
+          <div className="header__item">
+            <span className="header__itemLineOne">Hello Guest</span>
+            <span className="header__itemLineSecond">Sign In</span>
+          </div>
+        </Link>
         <div className="header__item">
           <span className="header__itemLineOne">Returns</span>
           <span className="header__itemLineSecond">& Orders</span>
