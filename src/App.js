@@ -9,6 +9,7 @@ import Header from "./componentes/Header";
 import Home from "./pages/Home";
 import Checkout from "./pages/Checkout";
 import Login from "./pages/Login";
+import Payment from "./pages/Payment";
 
 function App() {
   const [{}, dispatch] = useStateValue();
@@ -42,6 +43,10 @@ function App() {
           <Route path="/checkout">
             <Header />
             <Checkout />
+          </Route>
+          <Route path="/payment">
+            <Header />
+            <Payment />
           </Route>
           <Route path="/">
             <Header />
