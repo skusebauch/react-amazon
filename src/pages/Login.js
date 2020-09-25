@@ -1,16 +1,25 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { auth } from "../Keys/firebase";
 import { db } from "../Keys/firebase";
 import "./Login.css";
 
 function Login() {
+  let history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const signIn = (event) => {
     event.preventDefault();
     // firebase login func
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then((auth) => {
+        if (auth) {
+          history.push("/");
+        }
+      })
+      .catch((error) => alert(error.message));
   };
 
   const register = (event) => {
@@ -20,7 +29,9 @@ function Login() {
       .createUserWithEmailAndPassword(email, password)
       .then((auth) => {
         // successfully created new user
-        console.log(auth);
+        if (auth) {
+          history.push("/");
+        }
       })
       .catch((error) => alert(error.message));
   };
