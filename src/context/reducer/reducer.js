@@ -2,6 +2,7 @@ import * as actionType from "./actionTypes";
 
 export const initialState = {
   basket: [],
+  user: null,
 };
 
 // SELECTOR
@@ -11,6 +12,7 @@ export const getBasketTotal = (basket) =>
 const reducer = (state, action) => {
   console.log(action);
   switch (action.type) {
+    // BASKET - reducer
     case actionType.ADD_TO_BASKET:
       return {
         ...state,
@@ -32,6 +34,13 @@ const reducer = (state, action) => {
       return {
         ...state,
         basket: newBasket,
+      };
+    // USER - reducer
+    case actionType.SET_USER:
+      return {
+        ...state,
+        //action "user" you set this at app.js dispatch object
+        user: action.user,
       };
     default:
       return {
