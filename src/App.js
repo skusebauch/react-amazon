@@ -31,9 +31,8 @@ function App() {
       }
     });
   }, []);
-
+  // BEM
   return (
-    // BEM
     <Router>
       <div className="app">
         <Switch>
