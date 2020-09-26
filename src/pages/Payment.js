@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import CheckoutProduct from "../componentes/CheckoutProduct";
 import { useStateValue } from "../context/StateProvider";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
@@ -7,7 +7,6 @@ import "./Payment.css";
 import CurrencyFormat from "react-currency-format";
 import { getBasketTotal } from "../context/reducer/reducer";
 import axios from "../axios/axios";
-import { useHistory } from "react-router-dom";
 
 function Payment() {
   // datalayer react context
