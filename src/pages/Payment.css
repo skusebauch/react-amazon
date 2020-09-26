@@ -27,7 +27,8 @@
 }
 
 .payment__address,
-.payment__items {
+.payment__items,
+.payment__details {
   /* address should take 80% - can also work with flex base */
   flex: 0.8;
 }
