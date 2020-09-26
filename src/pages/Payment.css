@@ -1,0 +1,33 @@
+.payment {
+  background-color: white;
+}
+
+.payment__container > h1 {
+  text-align: center;
+  padding: 1rem;
+  font-weight: 400;
+  background-color: rgb(234, 237, 237);
+  border-bottom: 1px solid lightgray;
+}
+
+.payment__container > h1 a {
+  text-decoration: none;
+}
+
+.payment__section {
+  display: flex;
+  padding: 2rem;
+  margin: 0 2rem;
+  border-bottom: 1px solid lightgray;
+}
+
+.payment__title {
+  /* title should take 20% */
+  flex: 0.2;
+}
+
+.payment__address,
+.payment__items {
+  /* address should take 80% - can also work with flex base */
+  flex: 0.8;
+}
