@@ -12,6 +12,7 @@ import Home from "./pages/Home";
 import Checkout from "./pages/Checkout";
 import Login from "./pages/Login";
 import Payment from "./pages/Payment";
+import Orders from "./pages/Orders";
 
 // stripe public key
 const stripePromise = loadStripe(
@@ -56,6 +57,10 @@ function App() {
             <Elements stripe={stripePromise}>
               <Payment />
             </Elements>
+          </Route>
+          <Route path="/orders">
+            <Header />
+            <Orders />
           </Route>
           <Route path="/">
             <Header />

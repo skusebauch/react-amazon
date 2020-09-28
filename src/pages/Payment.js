@@ -7,6 +7,8 @@ import "./Payment.css";
 import CurrencyFormat from "react-currency-format";
 import { getBasketTotal } from "../context/reducer/reducer";
 import axios from "../axios/axios";
+import * as actionType from "../context/reducer/actionTypes";
+import { db } from "../Keys/firebase";
 
 function Payment() {
   // datalayer react context
@@ -36,6 +38,9 @@ function Payment() {
     getClientSecret();
   }, [basket]);
 
+  console.log("THE SECRET IS >>>> ", clientSecret);
+  console.log("this is user >>", user);
+
   const submitHandler = async (event) => {
     // stripe stuff
     event.preventDefault();
@@ -48,11 +53,25 @@ function Payment() {
         },
       })
       .then(({ paymentIntent }) => {
-        // paymentIntent = payment confirmation
+        // paymentIntent = payment confirmation from stripe
+        //nosql db
+        db.collection("users")
+          .doc(user?.uid)
+          .collection("orders")
+          .doc(paymentIntent.id)
+          .set({
+            basket: basket,
+            amount: paymentIntent.amount,
+            created: paymentIntent.created,
+          });
+
         setSucceeded(true);
         setError(null);
         setProcessing(false);
 
+        dispatch({
+          type: actionType.EMPTY_BASKET,
+        });
         history.replace("/orders");
       });
   };

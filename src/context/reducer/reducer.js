@@ -35,6 +35,11 @@ const reducer = (state, action) => {
         ...state,
         basket: newBasket,
       };
+    case actionType.EMPTY_BASKET:
+      return {
+        ...state,
+        basket: [],
+      };
     // USER - reducer
     case actionType.SET_USER:
       return {
