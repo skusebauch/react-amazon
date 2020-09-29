@@ -32,3 +32,22 @@
   /* address should take 80% - can also work with flex base */
   flex: 0.8;
 }
+
+.payment__details > form {
+  max-width: 40rem;
+}
+
+.payment__details h3 {
+  padding-bottom: 2rem;
+}
+
+.payment__details > form > div > button {
+  background-color: rgb(255, 216, 20);
+  border: 1px solid;
+  margin-top: 1rem;
+  border-color: #a88734 #9c7e31 #846a29;
+  color: #111;
+  width: 100%;
+  height: 3rem;
+  font-weight: bolder;
+}

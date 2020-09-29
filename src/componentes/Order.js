@@ -9,7 +9,7 @@ function Order({ order }) {
   return (
     <div className="order">
       <h2>Order</h2>
-      <p>{moment.unix(order.data.created).format("lll")}</p>
+      <p>{moment.unix(order.data.created).format("LLL")}</p>
       <p className="order__id">
         <small>{order.id}</small>
       </p>
@@ -32,7 +32,7 @@ function Order({ order }) {
         decimalScale={2}
         value={order.data.amount / 100}
         displayType={"text"}
-        thousandSeperator={true}
+        thousandSeparator={true}
       />
     </div>
   );
